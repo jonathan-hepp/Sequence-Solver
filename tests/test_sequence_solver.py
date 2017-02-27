@@ -46,3 +46,23 @@ class TestSequence_solver(unittest.TestCase):
         solver = strategies.AlphabetSubstitutionStrategy()
         next_item = solver.solve(["x", "u", "q", "l"])
         self.assertEqual("f", next_item)
+
+    def test_006_fibonacci(self):
+        solver = strategies.SpecialCasesStrategy()
+        next_item = solver.solve([1,1,2,3,5,8,13])
+        self.assertEqual(21, next_item)
+
+    def test_007_fibonacci2(self):
+        solver = strategies.SpecialCasesStrategy()
+        next_item = solver.solve([5,8,13,21,34])
+        self.assertEqual(55, next_item)
+
+    def test_008_fibonacci_unordered(self):
+        solver = strategies.SpecialCasesStrategy()
+        self.assertRaises(Exception, solver.solve, [55,13,8,21,5,34])
+
+    def test_009_non_fibonacci(self):
+        solver = strategies.SpecialCasesStrategy()
+        self.assertRaises(Exception, solver.solve, [5,8,13,19,34])
+
+

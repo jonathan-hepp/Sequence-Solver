@@ -41,3 +41,21 @@ class AlphabetSubstitutionStrategy(BaseStrategy):
         new_sequence = [string.ascii_lowercase.index(l.lower())+1 for l in sequence]
         return string.ascii_lowercase[(self.__diffTableStrategy.solve(new_sequence, debug)-1) % len(string.ascii_lowercase)]
 
+
+class SpecialCasesStrategy(BaseStrategy):
+
+    def solve(self, sequence, debug=False):
+        if self.__is_fibonacci(sequence):
+            return sequence[-2] + sequence[-1]
+        raise Exception("Unsolvable sequence")
+
+    def __is_fibonacci(self, sequence):
+        return all(map(lambda x: x == 0 or abs(round(x*1.618) - x*1.618) < 1.0 / x, sequence)) and self.__is_fibonacci_ordered(sequence)
+
+    def __is_fibonacci_ordered(self, sequence):
+        for i in range(1, len(sequence)-1):
+            if sequence[i+1] != sequence[i-1] + sequence[i]:
+                return False
+        return True
+
+
