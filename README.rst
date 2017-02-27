@@ -29,8 +29,8 @@ Features
 --------
 
 * TODO
-..* Implement new strategies for sequence solving
-..* Increase test coverage
-..* Extend API
-..* Documentation, documentation, documentation
+    * Implement new strategies for sequence solving
+    * Increase test coverage
+    * Extend API
+    * Documentation, documentation, documentation
 
