@@ -24,7 +24,7 @@ setup(
     long_description=readme + '\n\n' + history,
     author="Jonathan Hepp",
     author_email='jonathan.hepp@gmail.com',
-    url='https://github.com/jonathan-hepp/sequence_solver',
+    url='https://github.com/jonathan-hepp/Sequence-Solver',
     packages=[
         'sequence_solver',
     ],
